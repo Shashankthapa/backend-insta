@@ -23,13 +23,13 @@ const UpdatePost = () => {
     console.log("id", id);
     try {
       const data = await fetch(
-        `http://localhost:3000/api/posts/update-post/${id}`,
+        `https://instagram-post-assignment.onrender.com/api/posts/update-post/${id}`,
         {
           method: "PATCH",
           body: form,
         }
       );
-      const {msg} = await data.json();
+      const { msg } = await data.json();
       setMsg({ status: "success", resp: msg });
       setShowAlert(true);
     } catch (err) {
@@ -39,14 +39,13 @@ const UpdatePost = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if(showAlert == true){
+      if (showAlert == true) {
         setShowAlert(false);
-        navigate("/all-posts")
+        navigate("/all-posts");
       }
     }, 2000);
     return () => clearTimeout(timeout);
   }, [showAlert]);
-
 
   return (
     <PostForm

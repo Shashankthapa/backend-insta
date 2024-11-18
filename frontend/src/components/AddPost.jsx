@@ -18,10 +18,13 @@ const AddPost = () => {
     form.append("desc", desc);
     form.append("image", image);
     try {
-      const data = await fetch("http://localhost:3000/api/posts/create-post", {
-        method: "POST",
-        body: form,
-      });
+      const data = await fetch(
+        "https://instagram-post-assignment.onrender.com/api/posts/create-post",
+        {
+          method: "POST",
+          body: form,
+        }
+      );
       const { msg } = await data.json();
       setMsg({ status: "success", resp: msg });
       setShowAlert(true);
@@ -29,12 +32,12 @@ const AddPost = () => {
       console.log(err);
     }
   };
-  
+
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if(showAlert == true){
+      if (showAlert == true) {
         setShowAlert(false);
-        navigate("/all-posts")
+        navigate("/all-posts");
       }
     }, 2000);
     return () => clearTimeout(timeout);

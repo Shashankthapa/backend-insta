@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddPost from "./components/AddPost";
 import AllPosts from "./components/AllPosts";

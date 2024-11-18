@@ -14,9 +14,12 @@ const AllPosts = () => {
 
   const fetchAllPosts = async () => {
     setIsLoading(true);
-    const data = await fetch("http://localhost:3000/api/posts/all", {
-      method: "GET",
-    });
+    const data = await fetch(
+      "https://instagram-post-assignment.onrender.com/api/posts/all",
+      {
+        method: "GET",
+      }
+    );
     setIsLoading(false);
     //return promise data
     const response = await data.json();
@@ -27,7 +30,7 @@ const AllPosts = () => {
   // to populate the form data
   const fetchUpdatingData = async (post_id) => {
     const data = await fetch(
-      `http://localhost:3000/api/posts/get-data/${post_id}`,
+      `https://instagram-post-assignment.onrender.com/api/posts/get-data/${post_id}`,
       {
         method: "GET",
       }
@@ -47,7 +50,7 @@ const AllPosts = () => {
   const deleteIndividualData = async (post_id) => {
     try {
       const data = await fetch(
-        `http://localhost:3000/api/posts/delete-post/${post_id}`,
+        `https://instagram-post-assignment.onrender.com/api/posts/delete-post/${post_id}`,
         { method: "DELETE" }
       );
       const { msg } = await data.json();

@@ -13,7 +13,7 @@ const IndividualPost = () => {
   const fetchIndividualPost = async () => {
     try {
       const data = await fetch(
-        `http://localhost:3000/api/posts/get-data/${id}`,
+        `https://instagram-post-assignment.onrender.com/api/posts/get-data/${id}`,
         {
           method: "GET",
         }
@@ -39,7 +39,10 @@ const IndividualPost = () => {
         <h1 className="text-2xl font-bold text-center">{title}</h1>
         <section className="flex justify-center p-5">
           <section className="w-[40%]">
-            <img src={`http://localhost:3000/${image}`} alt="post-image" />
+            <img
+              src={`https://instagram-post-assignment.onrender.com/${image}`}
+              alt="post-image"
+            />
           </section>
         </section>
         <article className="p-5 break-words">

@@ -6,6 +6,7 @@ const Dash = () => {
   const navigate = useNavigate();
   return (
     <section className="flex-col content-center w-screen h-screen">
+      <h1 className="text-2xl font-bold text-center pb-10">Instagram Post Management</h1>
       <div className="flex justify-center">
         <Button
           propStyle="w-[15%] p-3 sm:w-[20%] bg-green-500 sm:p-8 rounded-lg"
